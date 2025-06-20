@@ -4,15 +4,18 @@ import interfaces.Player;
 
 public class Audio extends Multimedia implements Player {
 
-    private int volume;
+    private int volume = 5;
 
     public Audio(String title, int duration) {
         super(title, duration);
     }
 
     @Override
-    public void play(int duration) {
-
+    public void play() {
+        for(int i = 0; i < this.duration; i++) {
+            System.out.println("Video title: " + this.title);
+            printVolume();
+        }
     }
 
     @Override
@@ -35,5 +38,10 @@ public class Audio extends Multimedia implements Player {
         }
 
         System.out.println("Current volume for this audio: " + volumeState);
+    }
+
+    @Override
+    public String toString() {
+        return "Audio title: " + title + ", Audio duration: " + duration + "s";
     }
 }

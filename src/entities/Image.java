@@ -38,4 +38,8 @@ public class Image extends Multimedia implements Shower {
             System.out.println("Current luminosity for this image: " + luminosityState);
         }
 
+    @Override
+    public String toString() {
+        return "Image title: " + title;
+    }
 }

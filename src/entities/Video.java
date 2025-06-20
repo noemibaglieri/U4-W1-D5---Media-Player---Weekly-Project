@@ -5,7 +5,7 @@ import interfaces.Shower;
 
 public class Video extends Multimedia implements Player, Shower {
 
-    private int volume;
+    private int volume = 5;
     private int luminosity = 5;
 
     public Video(String title, int duration) {
@@ -13,13 +13,13 @@ public class Video extends Multimedia implements Player, Shower {
     }
 
     @Override
-    public void play(int duration) {
+    public void play() {
 
-        for(int i = 0; i < duration; i++) {
+        for(int i = 0; i < this.duration; i++) {
             System.out.println("Video title: " + this.title);
+            printVolume();
+            printLuminosity();
         }
-        printVolume();
-        printLuminosity();
     }
 
     @Override
@@ -70,5 +70,10 @@ public class Video extends Multimedia implements Player, Shower {
     public void show() {
         System.out.println("Video title: " + this.title);
         printLuminosity();
+    }
+
+    @Override
+    public String toString() {
+        return "Video title: " + title + ", Video duration: " + duration + "s";
     }
 }
