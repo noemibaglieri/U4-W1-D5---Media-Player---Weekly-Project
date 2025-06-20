@@ -24,4 +24,16 @@ public class Audio extends Multimedia implements Player {
     public void lowerVolume(int volume) {
     this.volume = volume;
     }
+
+    @Override
+    public void printVolume() {
+
+        StringBuilder volumeState = new StringBuilder();
+
+        for(int i = 0; i < this.volume; i++) {
+            volumeState.append("!");
+        }
+
+        System.out.println("Current volume for this audio: " + volumeState);
+    }
 }
