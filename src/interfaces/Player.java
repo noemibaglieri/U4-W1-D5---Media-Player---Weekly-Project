@@ -1,7 +1,8 @@
 package interfaces;
 
 public interface Player {
-    public void play(int duration);
-    public void raiseVolume();
-    public void lowerVolume();
+
+    void play(int duration);
+    void raiseVolume(int volume);
+    void lowerVolume(int volume);
 }
